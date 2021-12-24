@@ -1,0 +1,197 @@
+{
+  "contractName": "Truth",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Truth.sol\":\"Truth\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Truth.sol\":{\"keccak256\":\"0x29b66bccf4f10c4878b8ec65d445b4437915a681ec002ff1f9c0aaef5d080803\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cd2a818a7ca2cc050093a60104ea9177eceb468a8164c8228282f700074dac2a\",\"dweb:/ipfs/QmWMP7RLe6fDvQJvwMYriMsBk4rC8jMKsPhquDXqG3VEjN\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220767321864ef77161ef1ae21dfdaf3fe7963f28182fab67bec8175ad2895a73f464736f6c634300080a0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220767321864ef77161ef1ae21dfdaf3fe7963f28182fab67bec8175ad2895a73f464736f6c634300080a0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "66:47:5:-:0;;;85:26;;;;;;;;;;66:47;;;;;;",
+  "deployedSourceMap": "66:47:5:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract Truth {\n  constructor() public {\n  }\n}\n",
+  "sourcePath": "/Users/jake/socratiq/contracts/Truth.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Truth.sol",
+    "exportedSymbols": {
+      "Truth": [
+        67
+      ]
+    },
+    "id": 68,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 62,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:5"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Truth",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 67,
+        "linearizedBaseContracts": [
+          67
+        ],
+        "name": "Truth",
+        "nameLocation": "75:5:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 65,
+              "nodeType": "Block",
+              "src": "106:5:5",
+              "statements": []
+            },
+            "id": 66,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "96:2:5"
+            },
+            "returnParameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "106:0:5"
+            },
+            "scope": 67,
+            "src": "85:26:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 68,
+        "src": "66:47:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:82:5"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/Truth.sol",
+    "exportedSymbols": {
+      "Truth": [
+        67
+      ]
+    },
+    "id": 68,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 62,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:32:5"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Truth",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 67,
+        "linearizedBaseContracts": [
+          67
+        ],
+        "name": "Truth",
+        "nameLocation": "75:5:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 65,
+              "nodeType": "Block",
+              "src": "106:5:5",
+              "statements": []
+            },
+            "id": 66,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 63,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "96:2:5"
+            },
+            "returnParameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "106:0:5"
+            },
+            "scope": 67,
+            "src": "85:26:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 68,
+        "src": "66:47:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:82:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2021-12-24T00:58:05.426Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
