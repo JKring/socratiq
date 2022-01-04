@@ -39,8 +39,8 @@ contract Truth {
   }
 
   function getScore(address addr) public view returns(uint) {
-		return scores[addr];
-	}
+    return scores[addr];
+  }
 
   function applyTruthEarned(TruthEarned[] memory truthEarned) private {
     uint numTruthEarned = truthEarned.length;
