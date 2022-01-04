@@ -6,7 +6,7 @@ const DebateCoin = artifacts.require("DebateCoin");
  * See docs: https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-javascript
  */
 contract("DebateCoin", function (/* accounts */) {
-  it("should assert true", async function () {
+  it("should be deployed", async function () {
     await DebateCoin.deployed();
     return assert.isTrue(true);
   });
