@@ -10,21 +10,21 @@ contract('Truth', function (debaters) {
   });
   it('should start at 0 for uninitiated Debaters', async function () {
     const truth = await Truth.deployed();
-    const score = await truth.getScore(debaters[0]);
+    const score = await truth.getPoints({ from: debaters[0] });
     return assert.equal(score, 0, 'accounts should start with 0 truth');
   });
   it('should allocate to new Debaters', async function () {
     const truth = await Truth.deployed();
-    await truth.addDebater(debaters[1]);
-    const score = await truth.getScore(debaters[1]);
+    await truth.initAccount({ from: debaters[1] });
+    const score = await truth.getPoints({ from: debaters[1] });
     assert.equal(score.valueOf(), 10000, 'new Moderators should be allocated 10000');
-    await truth.addDebater(debaters[1]);
-    const newestScore = await truth.getScore(debaters[1]);
+    await truth.initAccount({ from: debaters[1] });
+    const newestScore = await truth.getPoints({ from: debaters[1] });
     return assert.equal(newestScore.valueOf(), 10000, 'new Moderators not be double allocated');
   });
   it('should allowing scoring Arguments', async function () {
     const truth = await Truth.deployed();
-    await truth.addDebater(debaters[1]);
+    await truth.initAccount({ from: debaters[1] });
     const arguments = await Arguments.deployed();
     await arguments.create('Dogs are better than cats', { from: debaters[1] });
     const argumentIds = await arguments.requiringReview();
@@ -41,7 +41,7 @@ contract('Truth', function (debaters) {
     const arguments = await Arguments.deployed();
     const sources = await Sources.deployed();
     const creator = debaters[3]
-    await truth.addDebater(creator);
+    await truth.initAccount({ from: creator });
     await arguments.create('Dogs are better than cats', { from: creator });
     const argumentIds = await arguments.requiringReview();
     const argId = argumentIds[0];
@@ -72,24 +72,24 @@ contract('Truth', function (debaters) {
       maybeSmellyDogsSupporter,
     ] = allDebaters
 
-    await truth.addDebater(funnySupporterOne);
-    await truth.addDebater(funnySupporterTwo);
-    await truth.addDebater(randomDebater);
-    await truth.addDebater(smellySupporter);
-    await truth.addDebater(funnyDogsSupporter);
-    await truth.addDebater(fakeFunnyDogsOpposer);
-    await truth.addDebater(smellyDogsSupporter);
-    await truth.addDebater(maybeSmellyDogsSupporter);
+    await truth.initAccount({ from: funnySupporterOne });
+    await truth.initAccount({ from: funnySupporterTwo });
+    await truth.initAccount({ from: randomDebater });
+    await truth.initAccount({ from: smellySupporter });
+    await truth.initAccount({ from: funnyDogsSupporter });
+    await truth.initAccount({ from: fakeFunnyDogsOpposer });
+    await truth.initAccount({ from: smellyDogsSupporter });
+    await truth.initAccount({ from: maybeSmellyDogsSupporter });
 
     const beforeTruths = {}
-    beforeTruths[funnySupporterOne] = await truth.getScore(funnySupporterOne);
-    beforeTruths[funnySupporterTwo] = await truth.getScore(funnySupporterTwo);
-    beforeTruths[randomDebater] = await truth.getScore(randomDebater);
-    beforeTruths[smellySupporter] = await truth.getScore(smellySupporter);
-    beforeTruths[funnyDogsSupporter] = await truth.getScore(funnyDogsSupporter);
-    beforeTruths[fakeFunnyDogsOpposer] = await truth.getScore(fakeFunnyDogsOpposer);
-    beforeTruths[smellyDogsSupporter] = await truth.getScore(smellyDogsSupporter);
-    beforeTruths[maybeSmellyDogsSupporter] = await truth.getScore(maybeSmellyDogsSupporter);
+    beforeTruths[funnySupporterOne] = await truth.getPoints({ from: funnySupporterOne });
+    beforeTruths[funnySupporterTwo] = await truth.getPoints({ from: funnySupporterTwo });
+    beforeTruths[randomDebater] = await truth.getPoints({ from: randomDebater });
+    beforeTruths[smellySupporter] = await truth.getPoints({ from: smellySupporter });
+    beforeTruths[funnyDogsSupporter] = await truth.getPoints({ from: funnyDogsSupporter });
+    beforeTruths[fakeFunnyDogsOpposer] = await truth.getPoints({ from: fakeFunnyDogsOpposer });
+    beforeTruths[smellyDogsSupporter] = await truth.getPoints({ from: smellyDogsSupporter });
+    beforeTruths[maybeSmellyDogsSupporter] = await truth.getPoints({ from: maybeSmellyDogsSupporter });
 
     await truth.commitToFact(funnyId, { from: funnySupporterOne });
     await truth.commitToFact(funnyId, { from: funnySupporterTwo });
@@ -116,21 +116,21 @@ contract('Truth', function (debaters) {
     await truth.scoreArgument(argId, { from: creator });
 
     //// Results:
-    const funnyScore = await truth.getScore(funnySupporterOne);
+    const funnyScore = await truth.getPoints({ from: funnySupporterOne });
     assert.equal(funnyScore - beforeTruths[funnySupporterOne], 75, 'Funny committers get 75');
-    const smellyScore = await truth.getScore(smellySupporter);
+    const smellyScore = await truth.getPoints({ from: smellySupporter });
     assert.equal(smellyScore - beforeTruths[smellySupporter], 25, 'Smelly committers get 25');
 
-    const funnyDogsScore = await truth.getScore(funnyDogsSupporter);
+    const funnyDogsScore = await truth.getPoints({ from: funnyDogsSupporter });
     assert.equal(funnyDogsScore - beforeTruths[funnyDogsSupporter], 570, 'FunnyDogs.com pro committers earn 0.3 * committed');
 
-    const fakeFunnyDogsOpposerScore = await truth.getScore(fakeFunnyDogsOpposer);
+    const fakeFunnyDogsOpposerScore = await truth.getPoints({ from: fakeFunnyDogsOpposer });
     assert.equal(fakeFunnyDogsOpposerScore - beforeTruths[fakeFunnyDogsOpposer], 330, 'FakeFunnyDogs.com anti committers get 0.3 * committed');
 
-    const smellyDogsScore = await truth.getScore(smellyDogsSupporter);
+    const smellyDogsScore = await truth.getPoints({ from: smellyDogsSupporter });
     assert.equal(smellyDogsScore - beforeTruths[smellyDogsSupporter], 570, 'SmellyDogs.com pro committers earn 0.3 * committed');
 
-    const maybeSmellyDogsScore = await truth.getScore(maybeSmellyDogsSupporter);
+    const maybeSmellyDogsScore = await truth.getPoints({ from: maybeSmellyDogsSupporter });
     return assert.equal(maybeSmellyDogsScore - beforeTruths[maybeSmellyDogsSupporter], 0, 'MaybeSmellyDogs.com pro committers earn 0.3 * committed');
 
     //// Score is 1900 * 0.75 to 1900 * 0.25, so pro Argument supporters win

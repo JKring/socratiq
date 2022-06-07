@@ -18,7 +18,7 @@ contract("Arguments", function (debaters) {
     const arguments = await Arguments.deployed();
     await arguments.create('Dogs are better than cats', { from: debaters[0] });
     const argumentAddresses = await arguments.requiringReview();
-    await truth.addDebater(debaters[1]);
+    await truth.initAccount({ from: debaters[1] });
     await arguments.reject(argumentAddresses[0], { from: debaters[1] });
     const canceledStatus = await arguments.getStatus(argumentAddresses[0]);
     return assert.equal(canceledStatus, 1, "new argument should be canceled");
