@@ -38,8 +38,8 @@ contract Truth {
     _;
   }
 
-  function getScore(address addr) public view returns(uint) {
-    return scores[addr];
+  function getPoints() public view returns(uint) {
+    return scores[msg.sender];
   }
 
   function applyTruthEarned(TruthEarned[] memory truthEarned) private {
@@ -102,14 +102,14 @@ contract Truth {
     return hasEnough;
   }
 
-  function addDebater(address addr) public returns(bool isNew) {
-    if (initialized[addr] == true) {
+  function initAccount() public returns(bool isNew) {
+    if (initialized[msg.sender] == true) {
       return false;
     } else {
-      initialized[addr] = true;
+      initialized[msg.sender] = true;
       totalInitialized += 1;
       uint allocation = totalInitialized < numFirstModerators ? firstModeratorsAllocation : initialAllocation;
-      scores[addr] = allocation;
+      scores[msg.sender] = allocation;
       return true;
     }
   }

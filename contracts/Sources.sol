@@ -57,6 +57,10 @@ contract Sources is TruthOwnable {
     return sourceToFactId[sourceId];
   }
 
+  function getDetails(uint sourceId) public view returns(string memory, uint, uint) {
+    return (url[sourceId], supportingTruth[sourceId], opposingTruth[sourceId]); 
+  }
+
   function commitTruthTo(uint sourceId, uint points, bool inSupport, address debater) public onlyTruth {
     byDebaterAddress[debater].push(sourceId);
     if (inSupport) {
@@ -84,7 +88,7 @@ contract Sources is TruthOwnable {
         supportingPercent = 0;
         opposingPercent = 0;
       } else {
-        supportingPercent = (supporting * 100)/ (supporting + opposing);
+        supportingPercent = (supporting * 100) / (supporting + opposing);
         opposingPercent = (opposing * 100) / (supporting + opposing);
       }
       if (supportingPercent >= unquestionabilityThresholdPercent) {

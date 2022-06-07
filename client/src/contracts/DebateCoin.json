@@ -21,15 +21,15 @@
     "absolutePath": "project:/contracts/DebateCoin.sol",
     "exportedSymbols": {
       "DebateCoin": [
-        13
+        264
       ]
     },
-    "id": 14,
+    "id": 265,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 8,
+        "id": 259,
         "literals": [
           "solidity",
           ">=",
@@ -49,9 +49,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 13,
+        "id": 264,
         "linearizedBaseContracts": [
-          13
+          264
         ],
         "name": "DebateCoin",
         "nameLocation": "75:10:1",
@@ -59,12 +59,12 @@
         "nodes": [
           {
             "body": {
-              "id": 11,
+              "id": 262,
               "nodeType": "Block",
               "src": "111:5:1",
               "statements": []
             },
-            "id": 12,
+            "id": 263,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -72,25 +72,25 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9,
+              "id": 260,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "101:2:1"
             },
             "returnParameters": {
-              "id": 10,
+              "id": 261,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "111:0:1"
             },
-            "scope": 13,
+            "scope": 264,
             "src": "90:26:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 14,
+        "scope": 265,
         "src": "66:52:1",
         "usedErrors": []
       }
@@ -101,15 +101,15 @@
     "absolutePath": "project:/contracts/DebateCoin.sol",
     "exportedSymbols": {
       "DebateCoin": [
-        13
+        264
       ]
     },
-    "id": 14,
+    "id": 265,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 8,
+        "id": 259,
         "literals": [
           "solidity",
           ">=",
@@ -129,9 +129,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 13,
+        "id": 264,
         "linearizedBaseContracts": [
-          13
+          264
         ],
         "name": "DebateCoin",
         "nameLocation": "75:10:1",
@@ -139,12 +139,12 @@
         "nodes": [
           {
             "body": {
-              "id": 11,
+              "id": 262,
               "nodeType": "Block",
               "src": "111:5:1",
               "statements": []
             },
-            "id": 12,
+            "id": 263,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -152,25 +152,25 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9,
+              "id": 260,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "101:2:1"
             },
             "returnParameters": {
-              "id": 10,
+              "id": 261,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "111:0:1"
             },
-            "scope": 13,
+            "scope": 264,
             "src": "90:26:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 14,
+        "scope": 265,
         "src": "66:52:1",
         "usedErrors": []
       }
@@ -185,12 +185,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xB6643f6C93D9f9aa112f014EDee3332c0D5643B7",
-      "transactionHash": "0xecf142af3122b5f7b6cf9c42778af0102dc9bbb6a16190c46a418b5c5171e065"
+      "address": "0x5664D111F09286F44C26E0e9e72174921Db45554",
+      "transactionHash": "0xe87e02a261301ab5a0fc12834757c1e04e95834993b81bf72e4ab11de7092470"
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-03T07:09:45.258Z",
+  "updatedAt": "2022-01-07T04:44:45.124Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
