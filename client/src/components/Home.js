@@ -1,28 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ModeratorStatus from "./ModeratorStatus.js";
 import ActiveArguments from "./ActiveArguments.js";
-import NewArgument from "./NewArgument";
 
-const Home = ({ needsInit, initAccount, truthPoints, address, truthContract, argumentsContract }) => {
+const WALLET_ERROR_MESSAGES = {
+  noWallet: <p>Socratiq is built on web3. So you will need a wallet like Metamask or Rainbow to join.</p>,
+  wrongNetwork: <p>Socratiq runs on Polygon, so you'll need to connect to the Polygon chain in your Wallet.</p>
+}
+
+const Home = ({ needsInit, walletError, initAccount, argumentsContract }) => {
   return <div>
     { needsInit ?
-      <div className="welcome">
-        <h1>Debate on the internet is broken.</h1>
-        <br />
-        <p>Socratiq is the first community that <b>rewards members</b> for making <b>nuanced</b>, <b>thoughtful</b>, <b>research-backed</b> arguments.</p>
-        <br />
-        <p>It costs 0.2 ETH to join (<Link to="/why">why?</Link>)</p>
-        <br />
-        <button type="button" className="btn btn-lg" onClick={initAccount}>Join with MetaMask Wallet</button>
+      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-lg w-full text-center">
+          <h1  className="text-3xl font-bold my-10">Debate on the internet is broken.</h1>
+          <p className="text-lg">Socratiq is the first community that <b>rewards members</b> for making <b>nuanced</b>, <b>thoughtful</b>, <b>research-backed</b> arguments.</p>
+          { walletError ?
+            <div className="bg-orange-100 p-5 rounded-lg mt-8">{WALLET_ERROR_MESSAGES[walletError]}</div>
+            :
+            <button
+              type="button"
+              className="cursor-pointer my-10 py-2 px-4 border border-transparent shadow-sm text-xl font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500"
+              onClick={initAccount}>
+              Join with MetaMask Wallet
+            </button>
+          }
+        </div>
       </div>
       :
       <div>
         <ActiveArguments argumentsContract={argumentsContract} />
-        <p>Your Truth Points: {truthPoints}</p>
-        <ModeratorStatus address={address} truthContract={truthContract} argumentsContract={argumentsContract} />
 
-        <NewArgument address={address} argumentsContract={argumentsContract} />
+        <div className="flex items-center justify-center">
+          <Link
+            to={'/arguments/new'}
+            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Start a New Argument
+          </Link>
+        </div>
       </div>
     }
   </div>

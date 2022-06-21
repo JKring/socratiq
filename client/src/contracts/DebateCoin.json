@@ -16,20 +16,20 @@
   "sourceMap": "66:52:1:-:0;;;90:26;;;;;;;;;;66:52;;;;;;",
   "deployedSourceMap": "66:52:1:-:0;;;;;",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract DebateCoin {\n  constructor() public {\n  }\n}\n",
-  "sourcePath": "/Users/jake/socratiq/contracts/DebateCoin.sol",
+  "sourcePath": "/Users/jbk/socratiq/contracts/DebateCoin.sol",
   "ast": {
     "absolutePath": "project:/contracts/DebateCoin.sol",
     "exportedSymbols": {
       "DebateCoin": [
-        264
+        296
       ]
     },
-    "id": 265,
+    "id": 297,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 259,
+        "id": 291,
         "literals": [
           "solidity",
           ">=",
@@ -49,9 +49,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 264,
+        "id": 296,
         "linearizedBaseContracts": [
-          264
+          296
         ],
         "name": "DebateCoin",
         "nameLocation": "75:10:1",
@@ -59,12 +59,12 @@
         "nodes": [
           {
             "body": {
-              "id": 262,
+              "id": 294,
               "nodeType": "Block",
               "src": "111:5:1",
               "statements": []
             },
-            "id": 263,
+            "id": 295,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -72,105 +72,25 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 260,
+              "id": 292,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "101:2:1"
             },
             "returnParameters": {
-              "id": 261,
+              "id": 293,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "111:0:1"
             },
-            "scope": 264,
+            "scope": 296,
             "src": "90:26:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 265,
-        "src": "66:52:1",
-        "usedErrors": []
-      }
-    ],
-    "src": "32:87:1"
-  },
-  "legacyAST": {
-    "absolutePath": "project:/contracts/DebateCoin.sol",
-    "exportedSymbols": {
-      "DebateCoin": [
-        264
-      ]
-    },
-    "id": 265,
-    "license": "MIT",
-    "nodeType": "SourceUnit",
-    "nodes": [
-      {
-        "id": 259,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.4",
-          ".22",
-          "<",
-          "0.9",
-          ".0"
-        ],
-        "nodeType": "PragmaDirective",
-        "src": "32:32:1"
-      },
-      {
-        "abstract": false,
-        "baseContracts": [],
-        "canonicalName": "DebateCoin",
-        "contractDependencies": [],
-        "contractKind": "contract",
-        "fullyImplemented": true,
-        "id": 264,
-        "linearizedBaseContracts": [
-          264
-        ],
-        "name": "DebateCoin",
-        "nameLocation": "75:10:1",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "body": {
-              "id": 262,
-              "nodeType": "Block",
-              "src": "111:5:1",
-              "statements": []
-            },
-            "id": 263,
-            "implemented": true,
-            "kind": "constructor",
-            "modifiers": [],
-            "name": "",
-            "nameLocation": "-1:-1:-1",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 260,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "101:2:1"
-            },
-            "returnParameters": {
-              "id": 261,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "111:0:1"
-            },
-            "scope": 264,
-            "src": "90:26:1",
-            "stateMutability": "nonpayable",
-            "virtual": false,
-            "visibility": "public"
-          }
-        ],
-        "scope": 265,
+        "scope": 297,
         "src": "66:52:1",
         "usedErrors": []
       }
@@ -185,12 +105,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x5664D111F09286F44C26E0e9e72174921Db45554",
-      "transactionHash": "0xe87e02a261301ab5a0fc12834757c1e04e95834993b81bf72e4ab11de7092470"
+      "address": "0x7226203AfC3A48255257fBc572CCeb7865Fe3df9",
+      "transactionHash": "0xe4a58f7b1f2b9be1383387de1d5e1a78872b2b1daec72d0c689ef67d1bd1c0fc"
     }
   },
-  "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-07T04:44:45.124Z",
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-19T12:55:09.513Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

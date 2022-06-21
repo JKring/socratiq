@@ -9,12 +9,14 @@ contract Arguments is TruthOwnable, Reviewable  {
   struct Argument {
     string text;
     Status status;
+    address creator;
   }
   // CAUTION! DUPLICATED CODE!
-  // IF YOU CHANGE THIS ENUM, ALSO CHANGE THE
-  // STATUSES ARRAY AT THE TOP OF Argument.js
+  // IF YOU CHANGE THESE CONSTANTS, ALSO CHANGE
+  // ARGUMENT_STATUSES and MAX_SUBMISSION_LENGTH IN client/src/Constants.js
   enum Status{ NEEDS_REVIEW, REJECTED, BETTING, DEBATING, FINISHED }
   Status constant defaultStatus = Status.NEEDS_REVIEW;
+  uint constant maxArgumentLength = 280;
 
   uint[] allArguments;
   uint numArguments;
@@ -28,10 +30,13 @@ contract Arguments is TruthOwnable, Reviewable  {
   }
 
   function create(string memory text) public {
+    uint textLength = bytes(text).length;
+    require(textLength > 0, "Argument must exist");
+    require(textLength <= maxArgumentLength, "Argument is too long");
     numArguments ++;
     uint argumentId = 0 + numArguments;
     byDebaterAddress[msg.sender].push(argumentId);
-    arguments[argumentId] = Argument(text, defaultStatus);
+    arguments[argumentId] = Argument(text, defaultStatus, msg.sender);
     addToRequiringReview(argumentId);
   }
 
@@ -47,9 +52,9 @@ contract Arguments is TruthOwnable, Reviewable  {
     return byDebaterAddress[msg.sender];
   }
 
-  function getDetails(uint argumentId) public view returns (string memory, Status) {
+  function getDetails(uint argumentId) public view returns (string memory, Status, address) {
     Argument memory argument = arguments[argumentId];
-    return (argument.text, argument.status);
+    return (argument.text, argument.status, argument.creator);
   }
 
   function getStatus(uint argumentId) public view returns (Status) {
